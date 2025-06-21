@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Sanctuary | Professional Online Counseling in Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-teal': {
+                            '700': '#155e75', 
+                            '800': '#164e63', 
+                            '900': '#083344' 
+                        },
+                        'brand-pink': {
+                            '500': '#ec4899',
+                            '600': '#db2777'
+                        },
+                        'brand-slate': {
+                            '700': '#334155',
+                            '800': '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* brand-slate-700 */
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #155e75; /* brand-teal-700 */
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ec4899; /* brand-pink-500 */
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px -5px rgb(21 94 117 / 0.25);
+        }
+        .animated-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+             background: linear-gradient(to top, #f8fafc 0%, #f8fafc 10%, rgba(255,255,255,0) 100%), url('https://placehold.co/1600x900/083344/ec4899?text=.');
+             background-size: cover;
+             background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-brand-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-2xl font-bold text-brand-slate-800">Digital <span class="text-brand-teal-700">Sanctuary</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-slate-600 font-medium">
+                <a href="services.html" class="nav-link">Our Services</a>
+                <a href="therapists.html" class="nav-link">Our Therapists</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                 <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
+            <div class="hidden md:block">
+                <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md">Book a Free Call</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-3">
+            <a href="services.html" class="block nav-link text-center py-2">Our Services</a>
+            <a href="therapists.html" class="block nav-link text-center py-2">Our Therapists</a>
+            <a href="how-it-works.html" class="block nav-link text-center py-2">How It Works</a>
+            <a href="faq.html" class="block nav-link text-center py-2">FAQ</a>
+            <a href="blog.html" class="block nav-link text-center py-2">Blog</a>
+            <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="block cta-button bg-brand-teal-800 text-white font-semibold px-5 py-2.5 rounded-lg text-center mt-4">Book a Free Call</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg relative">
+            <div class="container mx-auto px-6 text-center pt-24 pb-32 md:pt-32 md:pb-48">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight animated-element">Your Journey to Mental Wellness Starts Here.</h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto animated-element" style="transition-delay: 150ms;">Professional, confidential online counseling for a better you. Connect with culturally-aware therapists from anywhere in Nepal and beyond.</p>
+                <div class="mt-10 animated-element" style="transition-delay: 300ms;">
+                    <a href="booking.html" class="cta-button bg-brand-pink-500 hover:bg-brand-pink-600 text-white font-bold px-8 py-4 rounded-lg shadow-xl text-lg">Book Your Free 15-Min Clarity Call</a>
+                    <p class="mt-4 text-sm text-slate-400">A no-obligation chat to see if we're the right fit for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach Section -->
+        <section id="approach" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">A Sanctuary Built on Trust & Understanding</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">We believe therapy is a collaborative journey. Our approach is grounded in empathy, evidence-based practices, and a deep respect for your unique cultural context.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 animated-element">
+                        <div class="flex items-center justify-center h-20 w-20 bg-teal-100 text-brand-teal-700 rounded-full mx-auto mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-slate-700">Client-Centered Care</h3>
+                        <p class="mt-2 text-slate-500">You are the expert on your own life. We listen deeply to understand your world and work with you to find the path forward that feels right for you.</p>
+                    </div>
+                    <div class="p-6 animated-element" style="transition-delay: 150ms;">
+                         <div class="flex items-center justify-center h-20 w-20 bg-teal-100 text-brand-teal-700 rounded-full mx-auto mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-slate-700">Uncompromising Privacy</h3>
+                        <p class="mt-2 text-slate-500">Your confidentiality is sacred. We use secure, encrypted technology that adheres to international privacy standards to protect your information.</p>
+                    </div>
+                    <div class="p-6 animated-element" style="transition-delay: 300ms;">
+                         <div class="flex items-center justify-center h-20 w-20 bg-teal-100 text-brand-teal-700 rounded-full mx-auto mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-3.97-1.03a9 9 0 015.94 5.94m-9.91 4.09a9 9 0 010-8.18"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-brand-slate-700">Cultural Understanding</h3>
+                        <p class="mt-2 text-slate-500">Our therapists understand the unique social and family dynamics of the Nepali context, providing care that is not just effective, but also deeply resonant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Therapists Section -->
+        <section id="therapists-preview" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animated-element">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Meet Our Compassionate Team</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Finding the right therapist is the most important step. Get to know some of our dedicated professionals.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animated-element">
+                        <img class="w-24 h-24 rounded-full mx-auto -mt-16 border-4 border-white shadow-lg" src="https://placehold.co/200x200/fbcfe8/9d2449?text=AS" alt="Photo of Dr. Anjali Sharma">
+                        <h3 class="mt-4 text-xl font-bold text-slate-800 text-center">Dr. Anjali Sharma</h3>
+                        <p class="text-brand-pink-500 font-semibold text-center">MSc. Clinical Psychology</p>
+                        <p class="mt-4 text-sm text-slate-500 italic text-center">"My goal is to create a space where you feel safe enough to explore your inner world and find your own strength."</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animated-element" style="transition-delay: 150ms;">
+                        <img class="w-24 h-24 rounded-full mx-auto -mt-16 border-4 border-white shadow-lg" src="https://placehold.co/200x200/fbcfe8/9d2449?text=BK" alt="Photo of Mr. Bikash Koirala">
+                        <h3 class="mt-4 text-xl font-bold text-slate-800 text-center">Mr. Bikash Koirala</h3>
+                        <p class="text-brand-pink-500 font-semibold text-center">MA Counseling Psychology</p>
+                        <p class="mt-4 text-sm text-slate-500 italic text-center">"Healthier connections start with better communication. I help individuals and couples build that foundation."</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animated-element" style="transition-delay: 300ms;">
+                        <img class="w-24 h-24 rounded-full mx-auto -mt-16 border-4 border-white shadow-lg" src="https://placehold.co/200x200/fbcfe8/9d2449?text=SM" alt="Photo of Ms. Sunita Maharjan">
+                        <h3 class="mt-4 text-xl font-bold text-slate-800 text-center">Ms. Sunita Maharjan</h3>
+                        <p class="text-brand-pink-500 font-semibold text-center">PGD in Counseling Psychology</p>
+                        <p class="mt-4 text-sm text-slate-500 italic text-center">"Mindfulness isn't about emptying your mind, but about being present with whatever arises. Let's learn together."</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12 animated-element">
+                     <a href="therapists.html" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md">Meet the Full Team</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                 <div class="text-center mb-12 animated-element">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Words of Trust</h2>
+                    <p class="mt-4 text-lg text-slate-600">Hear from those who have walked this path with us.</p>
+                </div>
+                <div class="relative animated-element">
+                    <div id="testimonial-container" class="relative bg-slate-50 p-8 md:p-12 rounded-lg shadow-inner overflow-hidden border border-slate-200">
+                        <!-- Testimonial slides will be injected here by JS -->
+                    </div>
+                    <button id="prev-testimonial" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 bg-white/80 hover:bg-white rounded-full p-2 text-brand-teal-800 shadow-md transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                     <button id="next-testimonial" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 bg-white/80 hover:bg-white rounded-full p-2 text-brand-teal-800 shadow-md transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="contact" class="py-20 bg-brand-teal-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white animated-element">Ready to Take the First Step?</h2>
+                <p class="mt-4 text-lg text-teal-200 max-w-2xl mx-auto animated-element" style="transition-delay: 150ms;">Your journey towards a healthier, happier mind can begin today. A friendly, no-pressure conversation is just a click away.</p>
+                <div class="mt-8 animated-element" style="transition-delay: 300ms;">
+                     <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-pink-500 hover:bg-brand-pink-600 text-white font-bold px-8 py-4 rounded-lg shadow-xl text-lg">Book Your Free 15-Min Clarity Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Digital Sanctuary</h3>
+                    <p class="mt-2 text-sm text-slate-400">Compassionate and professional online counseling for Nepal and the Nepali diaspora.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="services.html" class="hover:text-brand-pink-500 transition-colors">Services</a></li>
+                        <li><a href="therapists.html" class="hover:text-brand-pink-500 transition-colors">Therapists</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-pink-500 transition-colors">FAQ</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-pink-500 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Legal</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-brand-pink-500 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-brand-pink-500 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Contact Us</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="mailto:contact@digitalsanctuary.com.np" class="hover:text-brand-pink-500 transition-colors">contact@digitalsanctuary.com.np</a></li>
+                        <li class="text-slate-400">Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Digital Sanctuary. All Rights Reserved.</p>
+                <p class="mt-2">Disclaimer: If you are in a life-threatening situation, please do not use this site. Call your local emergency number or a crisis hotline immediately.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Testimonial Slider
+            const testimonials = [
+                {
+                    text: "Finding a therapist who truly understands the cultural pressures I face has been life-changing. I felt seen and heard for the first time. The online format made it so easy to start.",
+                    author: "S.K., Student Abroad"
+                },
+                {
+                    text: "I was skeptical about online therapy, but Digital Sanctuary made the process feel so safe and professional. My therapist is incredibly compassionate and has given me practical tools to manage my anxiety.",
+                    author: "R.B., IT Professional from Kathmandu"
+                },
+                {
+                    text: "The free clarity call was the perfect way to begin. It took away all the pressure and helped me find a therapist I genuinely connect with. I'm so grateful I took that first step.",
+                    author: "M.G., Entrepreneur"
+                }
+            ];
+            
+            let currentTestimonial = 0;
+            const testimonialContainer = document.getElementById('testimonial-container');
+            const nextButton = document.getElementById('next-testimonial');
+            const prevButton = document.getElementById('prev-testimonial');
+
+            function renderTestimonial() {
+                if (!testimonialContainer) return;
+                const testimonial = testimonials[currentTestimonial];
+                
+                const slide = document.createElement('div');
+                slide.className = 'testimonial-slide text-center';
+                slide.style.animation = 'fadeIn 0.6s ease-in-out';
+                slide.innerHTML = `
+                    <p class="text-5xl text-brand-pink-500/30 font-serif -mb-4">“</p>
+                    <p class="text-lg md:text-xl italic text-slate-600 mb-6">${testimonial.text}</p>
+                    <p class="font-semibold text-brand-teal-700 tracking-wide">${testimonial.author}</p>
+                `;
+                
+                testimonialContainer.innerHTML = '';
+                testimonialContainer.appendChild(slide);
+            }
+            const keyframes = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            const styleSheet = document.createElement("style");
+            styleSheet.innerText = keyframes;
+            document.head.appendChild(styleSheet);
+
+
+            if (nextButton && prevButton) {
+                nextButton.addEventListener('click', () => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                    renderTestimonial();
+                });
+
+                prevButton.addEventListener('click', () => {
+                    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+                    renderTestimonial();
+                });
+                renderTestimonial();
+            }
+
+            // Animate on scroll
+            const animatedElements = document.querySelectorAll('.animated-element');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

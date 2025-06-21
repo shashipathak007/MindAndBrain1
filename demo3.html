@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Sanctuary | Professional Online Counseling in Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-teal': {
+                            '700': '#155e75', // A bit richer teal
+                            '800': '#164e63', // Darker for primary actions
+                            '900': '#083344'  // Darkest for hover
+                        },
+                        'brand-pink': {
+                            '500': '#ec4899',
+                            '600': '#db2777'
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .nav-link {
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #155e75; /* brand-teal-700 */
+        }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px; 
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-brand-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-2xl font-bold text-slate-800">Digital <span class="text-brand-teal-700">Sanctuary</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-slate-600 font-medium">
+                <a href="#services" class="nav-link">Our Services</a>
+                <a href="#therapists" class="nav-link">Our Therapists</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+            <div class="hidden md:block">
+                <a href="#contact" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md">Book a Free Call</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-3">
+            <a href="#services" class="block nav-link">Our Services</a>
+            <a href="#therapists" class="block nav-link">Our Therapists</a>
+            <a href="#how-it-works" class="block nav-link">How It Works</a>
+            <a href="#faq" class="block nav-link">FAQ</a>
+            <a href="#contact" class="block cta-button bg-brand-teal-800 text-white font-semibold px-5 py-2.5 rounded-lg text-center mt-4">Book a Free Call</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="py-20 md:py-32 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 leading-tight">Your Journey to Mental Wellness Starts Here.</h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Professional, confidential online counseling for a better you. Connect with culturally-aware therapists from anywhere in Nepal and beyond.</p>
+                <div class="mt-10">
+                    <a href="#contact" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-bold px-8 py-4 rounded-lg shadow-xl text-lg">Book Your Free 15-Min Clarity Call</a>
+                    <p class="mt-4 text-sm text-slate-500">A no-obligation chat to see if we're the right fit for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Starting Therapy is Simple</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We've designed our process to be as seamless and unintimidating as possible.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-pink-100 text-brand-pink-600 rounded-full mx-auto mb-4 text-3xl font-bold">1</div>
+                        <h3 class="text-xl font-semibold text-slate-700">Browse Therapists</h3>
+                        <p class="mt-2 text-slate-500">Explore the profiles, specializations, and bios of our qualified team to find a professional who feels right for you.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-pink-100 text-brand-pink-600 rounded-full mx-auto mb-4 text-3xl font-bold">2</div>
+                        <h3 class="text-xl font-semibold text-slate-700">Book Your Session</h3>
+                        <p class="mt-2 text-slate-500">Choose a time that works for you with our easy online booking. Start with a free 15-minute clarity call to ensure a good fit.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 bg-pink-100 text-brand-pink-600 rounded-full mx-auto mb-4 text-3xl font-bold">3</div>
+                        <h3 class="text-xl font-semibold text-slate-700">Start Your Journey</h3>
+                        <p class="mt-2 text-slate-500">Connect with your therapist via a secure video call from the comfort and privacy of your own space.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Areas We Can Help With</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Our therapists are equipped to support you through a wide range of life's challenges.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Individual Counseling</h3>
+                        <p class="text-slate-600">A one-on-one confidential space to explore your thoughts, feelings, and goals. Ideal for managing anxiety, depression, stress, and personal growth.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Couples & Relationship Therapy</h3>
+                        <p class="text-slate-600">Navigate relationship challenges, improve communication, and build stronger connections with your partner in a supportive environment.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Stress & Burnout Management</h3>
+                        <p class="text-slate-600">Develop practical strategies and coping mechanisms to deal with workplace pressure, academic stress, or caregiver burnout.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Trauma-Informed Care</h3>
+                        <p class="text-slate-600">A safe and gentle approach to processing past traumatic experiences with therapists trained to prioritize your emotional safety.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Grief & Loss Counseling</h3>
+                        <p class="text-slate-600">Receive compassionate support as you navigate the complex emotions associated with bereavement and significant life changes.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-brand-teal-700 mb-3">Support for Diaspora</h3>
+                        <p class="text-slate-600">Connect with a therapist who understands the unique cultural challenges and pressures faced by Nepalis living abroad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Therapists Section -->
+        <section id="therapists" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Meet Our Compassionate Team</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Our team is composed of licensed, experienced professionals dedicated to your well-being.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="text-center">
+                        <img class="w-40 h-40 rounded-full mx-auto shadow-lg ring-4 ring-pink-100" src="https://placehold.co/200x200/fbcfe8/9d2449?text=AS" alt="Photo of Dr. Anjali Sharma">
+                        <h3 class="mt-6 text-xl font-bold text-slate-800">Dr. Anjali Sharma</h3>
+                        <p class="text-brand-pink-500 font-semibold">MSc. Clinical Psychology</p>
+                        <p class="mt-2 text-sm text-slate-500">Specializes in CBT, anxiety, and depression. Believes in empowering clients with practical tools for lasting change.</p>
+                    </div>
+                    <div class="text-center">
+                        <img class="w-40 h-40 rounded-full mx-auto shadow-lg ring-4 ring-pink-100" src="https://placehold.co/200x200/fbcfe8/9d2449?text=BK" alt="Photo of Mr. Bikash Koirala">
+                        <h3 class="mt-6 text-xl font-bold text-slate-800">Mr. Bikash Koirala</h3>
+                        <p class="text-brand-pink-500 font-semibold">MA Counseling Psychology</p>
+                        <p class="mt-2 text-sm text-slate-500">Focuses on relationship dynamics and family systems. Passionate about helping people build healthier connections.</p>
+                    </div>
+                    <div class="text-center">
+                        <img class="w-40 h-40 rounded-full mx-auto shadow-lg ring-4 ring-pink-100" src="https://placehold.co/200x200/fbcfe8/9d2449?text=SM" alt="Photo of Ms. Sunita Maharjan">
+                        <h3 class="mt-6 text-xl font-bold text-slate-800">Ms. Sunita Maharjan</h3>
+                        <p class="text-brand-pink-500 font-semibold">PGD in Counseling Psychology</p>
+                        <p class="mt-2 text-sm text-slate-500">Specializes in mindfulness-based stress reduction and supporting clients through life transitions and grief.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Frequently Asked Questions</h2>
+                    <p class="mt-4 text-lg text-slate-600">Answers to common questions to help you feel more prepared.</p>
+                </div>
+                <div id="faq-container" class="space-y-4">
+                    <div class="faq-item bg-white rounded-lg shadow-sm">
+                        <div class="faq-question cursor-pointer p-6 flex justify-between items-center">
+                            <h4 class="text-lg font-semibold text-slate-700">Is online therapy as effective as in-person therapy?</h4>
+                            <span class="faq-icon text-brand-pink-500 text-3xl font-light">+</span>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-slate-600">
+                            <p>Yes, numerous studies have shown that online therapy is just as effective as traditional in-person therapy for a wide range of issues, including anxiety, depression, and stress. The most important factor for success is the quality of the therapeutic relationship, which can be strongly established online.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item bg-white rounded-lg shadow-sm">
+                        <div class="faq-question cursor-pointer p-6 flex justify-between items-center">
+                            <h4 class="text-lg font-semibold text-slate-700">How do you ensure my privacy and confidentiality?</h4>
+                            <span class="faq-icon text-brand-pink-500 text-3xl font-light">+</span>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-slate-600">
+                            <p>Your privacy is our highest priority. We use secure, end-to-end encrypted video conferencing platforms that adhere to international privacy standards (like HIPAA). Everything you discuss with your therapist is strictly confidential, bound by the same ethical and legal codes as in-person therapy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm">
+                        <div class="faq-question cursor-pointer p-6 flex justify-between items-center">
+                            <h4 class="text-lg font-semibold text-slate-700">What technology do I need for a session?</h4>
+                            <span class="faq-icon text-brand-pink-500 text-3xl font-light">+</span>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-slate-600">
+                            <p>All you need is a stable internet connection and a private space where you won't be disturbed. You can use a smartphone, tablet, or computer with a webcam and microphone. No special software is required; you'll simply click a secure link that we send you before your session.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm">
+                        <div class="faq-question cursor-pointer p-6 flex justify-between items-center">
+                            <h4 class="text-lg font-semibold text-slate-700">How much does a session cost and how do I pay?</h4>
+                            <span class="faq-icon text-brand-pink-500 text-3xl font-light">+</span>
+                        </div>
+                        <div class="faq-answer px-6 pb-6 text-slate-600">
+                            <p>Our standard 50-minute session rates are listed on our booking page. We offer slight discounts for booking packages of multiple sessions. We accept payments through major Nepali gateways like eSewa and Khalti, as well as bank transfers and major credit cards for international clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / CTA Section -->
+        <section id="contact" class="py-20 bg-brand-teal-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white">Ready to Take the First Step?</h2>
+                <p class="mt-4 text-lg text-teal-200 max-w-2xl mx-auto">Your journey towards a healthier, happier mind can begin today. A friendly, no-pressure conversation is just a click away.</p>
+                <div class="mt-8">
+                     <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-white text-brand-teal-800 font-bold px-8 py-4 rounded-lg shadow-xl text-lg hover:bg-pink-50">Book Your Free 15-Min Clarity Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Digital Sanctuary</h3>
+                    <p class="mt-2 text-sm text-slate-400">Compassionate and professional online counseling for Nepal and the Nepali diaspora.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-brand-pink-500 transition-colors">Services</a></li>
+                        <li><a href="#therapists" class="hover:text-brand-pink-500 transition-colors">Therapists</a></li>
+                        <li><a href="#faq" class="hover:text-brand-pink-500 transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-pink-500 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Legal</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-pink-500 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-pink-500 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Contact Us</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="mailto:contact@digitalsanctuary.com.np" class="hover:text-brand-pink-500 transition-colors">contact@digitalsanctuary.com.np</a></li>
+                        <li class="text-slate-400">Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Digital Sanctuary. All Rights Reserved.</p>
+                <p class="mt-2">Disclaimer: If you are in a life-threatening situation, please do not use this site. Call your local emergency number or a crisis hotline immediately.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // FAQ Accordion
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                const faqItems = faqContainer.querySelectorAll('.faq-item');
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    question.addEventListener('click', () => {
+                        const currentlyOpen = document.querySelector('.faq-item.open');
+                        if (currentlyOpen && currentlyOpen !== item) {
+                            currentlyOpen.classList.remove('open');
+                        }
+                        item.classList.toggle('open');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

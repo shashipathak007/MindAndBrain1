@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Therapists | Digital Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-teal': {
+                            '700': '#155e75', 
+                            '800': '#164e63', 
+                            '900': '#083344' 
+                        },
+                        'brand-pink': {
+                            '500': '#ec4899',
+                            '600': '#db2777'
+                        },
+                        'brand-slate': {
+                            '700': '#334155',
+                            '800': '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* brand-slate-700 */
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #155e75; /* brand-teal-700 */
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ec4899; /* brand-pink-500 */
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px -5px rgb(21 94 117 / 0.25);
+        }
+        .animated-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .page-hero-bg {
+             background: linear-gradient(rgba(22, 78, 99, 0.8), rgba(22, 78, 99, 0.8)), url('https://placehold.co/1600x900/f8fafc/e2e8f0?text=.');
+             background-size: cover;
+             background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-brand-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-2xl font-bold text-brand-slate-800">Digital <span class="text-brand-teal-700">Sanctuary</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-slate-600 font-medium">
+                <a href="services.html" class="nav-link">Our Services</a>
+                <a href="therapists.html" class="nav-link text-brand-teal-700 font-semibold">Our Therapists</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                 <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
+            <div class="hidden md:block">
+                <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md">Book a Free Call</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-3">
+             <a href="services.html" class="block nav-link text-center py-2">Our Services</a>
+            <a href="therapists.html" class="block nav-link text-center py-2 text-brand-teal-700 font-semibold">Our Therapists</a>
+            <a href="how-it-works.html" class="block nav-link text-center py-2">How It Works</a>
+            <a href="faq.html" class="block nav-link text-center py-2">FAQ</a>
+            <a href="blog.html" class="block nav-link text-center py-2">Blog</a>
+            <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="block cta-button bg-brand-teal-800 text-white font-semibold px-5 py-2.5 rounded-lg text-center mt-4">Book a Free Call</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero-bg">
+            <div class="container mx-auto px-6 text-center py-20 md:py-28">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight animated-element">Meet Our Compassionate Team</h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto animated-element" style="transition-delay: 150ms;">Finding the right therapist is the most important part of your journey. We invite you to learn more about our dedicated, licensed professionals.</p>
+            </div>
+        </section>
+
+        <!-- Therapists Grid -->
+        <section id="therapists-list" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 space-y-20">
+                
+                <!-- Therapist 1: Dr. Anjali Sharma -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden animated-element">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
+                        <div class="md:col-span-1">
+                             <img src="https://placehold.co/600x800/fbcfe8/164e63?text=Dr.+Anjali+S." alt="Professional portrait of Dr. Anjali Sharma" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:col-span-2 p-8 md:p-12">
+                            <h2 class="text-3xl font-bold text-brand-teal-800">Dr. Anjali Sharma</h2>
+                            <p class="text-lg font-semibold text-brand-pink-500 mt-1">MSc. Clinical Psychology</p>
+                            <div class="mt-6 border-t pt-6">
+                                <h4 class="font-bold text-brand-slate-700 mb-2">My Approach to Therapy</h4>
+                                <p class="text-slate-600 mb-4">"I believe that every person holds the capacity for growth and healing within them. My role is not to give you answers, but to walk alongside you as a guide, helping you uncover your own strength and wisdom. I use a practical, evidence-based approach, primarily Cognitive Behavioral Therapy (CBT), to help you understand the connection between your thoughts, feelings, and actions. Together, we'll develop concrete tools and strategies that you can use to manage challenges and create lasting, positive change in your life. It's a collaborative process, built on a foundation of trust and non-judgment."</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Areas of Specialization</h5>
+                                        <ul class="list-disc list-inside text-slate-500 mt-2">
+                                            <li>Anxiety & Panic Disorders</li>
+                                            <li>Depression & Mood Disorders</li>
+                                            <li>Stress & Burnout</li>
+                                            <li>Self-Esteem & Confidence</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Languages</h5>
+                                        <p class="text-slate-500 mt-2">Nepali, English</p>
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                     <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md inline-block">Book a Call with Dr. Anjali</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Therapist 2: Mr. Bikash Koirala -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden animated-element">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
+                         <div class="md:col-span-2 p-8 md:p-12">
+                            <h2 class="text-3xl font-bold text-brand-teal-800">Mr. Bikash Koirala</h2>
+                            <p class="text-lg font-semibold text-brand-pink-500 mt-1">MA Counseling Psychology</p>
+                            <div class="mt-6 border-t pt-6">
+                                <h4 class="font-bold text-brand-slate-700 mb-2">My Approach to Therapy</h4>
+                                <p class="text-slate-600 mb-4">"I see relationships as complex systems where every part affects the others. Whether it's a romantic partnership, a family, or our relationship with ourselves, patterns of communication and interaction are key. My work focuses on helping you identify these patterns—both the ones that serve you and the ones that hold you back. Using techniques from Emotionally Focused Therapy (EFT) and systems theory, we'll work to foster secure emotional bonds, improve communication, and navigate conflict constructively. My passion lies in helping people build healthier, more resilient connections in all areas of their lives."</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Areas of Specialization</h5>
+                                        <ul class="list-disc list-inside text-slate-500 mt-2">
+                                            <li>Couples & Relationship Counseling</li>
+                                            <li>Family Systems & Dynamics</li>
+                                            <li>Conflict Resolution</li>
+                                            <li>Pre-marital Counseling</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Languages</h5>
+                                        <p class="text-slate-500 mt-2">Nepali, English</p>
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                     <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md inline-block">Book a Call with Mr. Bikash</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1">
+                             <img src="https://placehold.co/600x800/fbcfe8/164e63?text=Mr.+Bikash+K." alt="Professional portrait of Mr. Bikash Koirala" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Therapist 3: Ms. Sunita Maharjan -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden animated-element">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
+                        <div class="md:col-span-1">
+                             <img src="https://placehold.co/600x800/fbcfe8/164e63?text=Ms.+Sunita+M." alt="Professional portrait of Ms. Sunita Maharjan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:col-span-2 p-8 md:p-12">
+                            <h2 class="text-3xl font-bold text-brand-teal-800">Ms. Sunita Maharjan</h2>
+                            <p class="text-lg font-semibold text-brand-pink-500 mt-1">PGD in Counseling Psychology</p>
+                            <div class="mt-6 border-t pt-6">
+                                <h4 class="font-bold text-brand-slate-700 mb-2">My Approach to Therapy</h4>
+                                <p class="text-slate-600 mb-4">"In our fast-paced world, it's easy to lose touch with ourselves. My approach is centered on mindfulness and self-compassion, helping you to slow down and become more aware of the present moment without judgment. I guide clients through significant life changes, helping them navigate the complex emotions of grief, loss, and transition. We'll work together to cultivate a kinder, more accepting relationship with yourself, using mindfulness-based stress reduction (MBSR) techniques to build resilience and find peace amidst life's uncertainties. It's about learning to be with your experience, just as it is."</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Areas of Specialization</h5>
+                                        <ul class="list-disc list-inside text-slate-500 mt-2">
+                                            <li>Mindfulness-Based Stress Reduction (MBSR)</li>
+                                            <li>Grief & Bereavement</li>
+                                            <li>Life Transitions</li>
+                                            <li>Support for Nepali Diaspora</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-brand-slate-700">Languages</h5>
+                                        <p class="text-slate-500 mt-2">Nepali, English, Newari</p>
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                     <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-teal-800 hover:bg-brand-teal-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md inline-block">Book a Call with Ms. Sunita</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Our Commitment Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                 <div class="animated-element">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Our Commitment to Quality & Ethics</h2>
+                    <p class="mt-4 text-lg text-slate-600 mx-auto">Your trust is our most important responsibility. All therapists at Digital Sanctuary are fully licensed professionals, registered with the appropriate counseling bodies in Nepal. We are committed to ongoing professional development, regular supervision, and strict adherence to a code of ethics that prioritizes your safety, confidentiality, and well-being above all else.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="contact" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6 text-center">
+                 <div class="bg-white rounded-lg p-10 md:p-16 shadow-lg animated-element">
+                    <h2 class="text-3xl font-bold text-brand-teal-800">Ready to Find the Right Fit?</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">The therapeutic relationship is the foundation of successful therapy. A free, 15-minute clarity call allows you to connect with a therapist, ask questions, and decide if they are the right person to support you.</p>
+                    <div class="mt-8">
+                         <a href="https://mailchi.mp/d6565665c92c/mind-and-brain" class="cta-button bg-brand-pink-500 hover:bg-brand-pink-600 text-white font-bold px-8 py-4 rounded-lg shadow-xl text-lg">Book a Free, No-Obligation Call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Digital Sanctuary</h3>
+                    <p class="mt-2 text-sm text-slate-400">Compassionate and professional online counseling for Nepal and the Nepali diaspora.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="services.html" class="hover:text-brand-pink-500 transition-colors">Services</a></li>
+                        <li><a href="therapists.html" class="hover:text-brand-pink-500 transition-colors">Therapists</a></li>
+                        <li><a href="faq.html" class="hover:text-brand-pink-500 transition-colors">FAQ</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-pink-500 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Legal</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="privacy.html" class="hover:text-brand-pink-500 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-brand-pink-500 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Contact Us</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="mailto:contact@digitalsanctuary.com.np" class="hover:text-brand-pink-500 transition-colors">contact@digitalsanctuary.com.np</a></li>
+                        <li class="text-slate-400">Kathmandu, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Digital Sanctuary. All Rights Reserved.</p>
+                <p class="mt-2">Disclaimer: If you are in a life-threatening situation, please do not use this site. Call your local emergency number or a crisis hotline immediately.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Animate on scroll
+            const animatedElements = document.querySelectorAll('.animated-element');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
